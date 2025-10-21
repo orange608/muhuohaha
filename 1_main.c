@@ -7,6 +7,6 @@ int main()
     float a = 0;
     printf("请输入你的摄氏温度：");
     scanf("%f", &a);
-    printf("3.1%f", a*9/5+32);
+    printf("%.1f", a*9/5+32);
     return 0;
 }
