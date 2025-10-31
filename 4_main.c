@@ -1,15 +1,32 @@
 //202510116208
 //3481098424@qq.com
 //吴纯宇
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-	int a,b,c = 0;
-	scanf("%d,%d,%d", &a, &b, &c);
-	if ((a + b) > c && (a + c) > b && (b + c) > a) {
-		printf("可以组成三角形");
-	}
-	else {
-		printf("不能组成三角形");
-	}
+    int num = 100;
+    int first = 1;
+    while (num <= 999)
+    {
+        int bai = num / 100;
+        int shi = (num / 10) % 10;
+        int ge = num % 10;
+        int sum = bai * bai * bai +
+            shi * shi * shi +
+            ge * ge * ge;
+        if (sum == num)
+        {
+            if (first) 
+            {
+                printf("%d", num);
+                first = 0;
+            }
+            else
+            {
+                printf(" %d", num);
+            }
+        }
+        num++;
+    }
+    return 0;
 }
