@@ -2,34 +2,27 @@
 //3481098424@qq.com
 //吴纯宇
 #include <stdio.h>
-int main() 
-{
-    int n = 0;
-    scanf("%d", &n);
-    if (n == 1) 
-    {
-        printf("密钥不安全，请重新输入");
-        return 0;
+int main() {
+    int a[10];
+    int i, j;
+    int t; 
+    printf("请输入10个整数，用空格分开：\n");
+    for (i = 0; i < 10; i++) {
+        scanf("%d", &a[i]);
     }
-    int i = 2;
-    int is_prime = 1;
-    while (i < n) 
-    {
-        if (n % i == 0) 
-        { 
-            is_prime = 0;
-            break;
+    for (i = 0; i < 9; i++) {
+        for (j = 0; j < 9 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                t = a[j]; 
+                a[j] = a[j + 1];
+                a[j + 1] = t;
+            }
         }
-        i++;
     }
-    if (is_prime) 
-    {
-        printf("密钥安全，密码设置成功");
+    printf("从小到大排序后：\n");
+    for (i = 0; i < 10; i++) {
+        printf("%d ", a[i]);
     }
-    else 
-    {
-        printf("密钥不安全，请重新输入");
-    }
-
+    printf("\n");
     return 0;
 }
