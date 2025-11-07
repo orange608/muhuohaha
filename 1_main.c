@@ -1,32 +1,22 @@
 //202510116208
 //3481098424@qq.com
 //吴纯宇
-#include <stdio.h>
-int main() 
-{ 
-    printf("请输入密钥:");
-    int n;
-    scanf("%d", &n);
-    if (n <= 0 || n >= 50) {
-        printf("密钥不安全，请重新输入");
-        return 0;
-    }
-    if (n == 1) {
-        printf("密钥不安全，请重新输入");
-        return 0;
-    }
-    int isPrime = 1;
-    for (int i = 2; i < n; i++) {
-        if (n % i == 0) {
-            isPrime = 0;
-            break;
+#include<stdio.h>
+int main() {
+    int arr[3][3];
+    int m, n;
+    printf("请输入3×3矩阵的9个元素（每行3个，用空格分隔）：\n");
+    for (m = 0; m < 3; m++) {
+        for (n = 0; n < 3; n++) {
+            scanf("%d", &arr[m][n]);
         }
     }
-    if (isPrime) {
-        printf("密钥安全，密码设置成功");
-    }
-    else {
-        printf("密钥不安全，请重新输入");
+    printf("\n输入的3×3矩阵为：\n");
+    for (m = 0; m < 3; m++) {
+        for (n = 0; n < 3; n++) {
+            printf("%d ", arr[m][n]);
+        }
+        printf("\n");
     }
     return 0;
 }
