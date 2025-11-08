@@ -2,30 +2,22 @@
 //3481098424@qq.com
 //吴纯宇
 #include <stdio.h>
-int main() 
-{
-    int arr[5];
+void h(int arr[], int length) {
     int i;
-    for (i = 0; i < 4; i++)
-    {
-        scanf("%d", &arr[i]);
+    for (i = 0; i < length / 2; i++) {
+        int q;
+        q = arr[i];
+        arr[i] = arr[length - 1 - i];
+        arr[length - 1 - i] = q;
     }
-    for (i = 4; i > 0; i--) 
-    {
-        arr[i] = arr[i - 1];
+}
+
+int main() {
+    int arr[5] = { 1, 2, 3, 4, 5 };
+    int i;
+    h(arr, 5);
+    for (i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
     }
-    arr[0] = 0;
-    for (i = 0; i < 5; i++)
-    {
-        if (i == 0) 
-        {
-            printf("%d", arr[i]);
-        }
-        else
-        {
-            printf(" %d", arr[i]);
-        }
-    }
-    printf("\n");
     return 0;
 }
