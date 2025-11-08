@@ -2,27 +2,28 @@
 //3481098424@qq.com
 //吴纯宇
 #include <stdio.h>
-int main() 
-{
+int h(int arr[], int length) {
+    int sum = 0;
+    for (int i = 0; i < length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+int h2(int arr[], int length) {
+    int j = 1;
+    for (int i = 0; i < length; i++) {
+        j *= arr[i];
+    }
+    return j;
+}
+
+int main() {
     int arr[5];
-    int i, num;
-    for (i = 0; i < 5; i++) 
-    {
-        scanf("%d", &num);
-        while (num % 2 != 0)
-        {
-            scanf("%d", &num);
-        }
-        arr[i] = num;
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
     }
-    for (i = 0; i < 5; i++) 
-    {
-        if (i > 0)
-        {
-            printf(" ");
-        }
-        printf("%d", arr[i]);
-    }
-    printf("\n");
+    int sum = h(arr, 5);
+    int j = h2(arr, 5);
+    printf("%d %d\n", sum, j);
     return 0;
 }
